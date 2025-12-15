@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Data Analyst</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+  <!-- NAV -->
+  <header class="navbar" role="banner">
+    <nav role="navigation" aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Theme Toggle (fixed top-right) -->
+  <button id="themeToggle" class="toggle-theme" aria-label="Toggle dark mode">🌙</button>
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Introduction">
+    <div class="hero-inner">
+      <h1>Areeba Nadeem</h1>
+      <p class="tagline">Data Analyst — Transforming Financial Data Into Actionable Insights</p>
+      <a class="cta" href="#contact">Get in Touch</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <div class="card about-card">
+      <p>I’m a detail-driven Financial Analyst specializing in transforming raw, messy data into clear, actionable insights. I help businesses make confident financial decisions by combining strong analytical thinking with clean data practices and compelling visual storytelling.
+
+With advanced skills in Excel data cleaning, data modeling, and Power BI dashboard development, I turn complex datasets into dashboards that answer real business questions. I focus on building intuitive, interactive reports that help clients spot trends, monitor performance, and uncover opportunities for growth.</p>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section">
+    <h2>Skills</h2>
+    <div class="grid">
+      <div class="card">Power BI</div>
+      <div class="card">Excel (Advanced)</div>
+      <div class="card">Data Cleaning</div>
+      <div class="card">DAX &amp; Power Query</div>
+      <div class="card">Financial Analysis</div>
+      <div class="card">Dashboard Design</div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+   <section id="projects" class="section">
+    <h2>Projects</h2>
+    <!-- Responsive two-image layout with mobile stacking -->
+<section class="projects-section">
+  <div class="grid-container">
+
+    <!-- LEFT IMAGE CARD -->
+    <article class="card project-card left-card" aria-labelledby="proj1-title">
+      <h3 id="proj1-title">Excel Data Cleaning Automation</h3>
+      <p>The raw dataset contains inconsistent date formats, duplicated entries, mixed text cases, and incorrect values.These issues make the data unreliable for analysis and cause errors in reporting dashboards.</p>
+
+      <img src="https://github.com/nobody0909/pictures/blob/main/unclean-data-Portfolio.png?raw=true" 
+           alt="Excel Image" 
+           class="project-image">
+          </article>
+</div>
+  
+
+  <!-- RIGHT IMAGE CARD -->
+    <article class="card project-card right-card" aria-labelledby="proj2-title">
+      <h3 id="proj2-title">Excel Data Cleaning Automation</h3>
+      <p>Using Power Query, the dataset was standardized, duplicates removed, formats fixed, and fields transformed into a consistent structure.The cleaned data is now fully reliable, analysis-ready, and can be used confidently in dashboards and automated reports.</p>
+
+      <img src="https://github.com/nobody0909/pictures/blob/main/clean-data-porfolio-image.png?raw=true" 
+           alt="Excel Image" 
+           class="project-image">
+
+    </article>
+</div>
+ 
+
+<style>
+  /* Grid container for two projects */
+  .grid-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+    padding: 1rem;
+    }
+
+  /* Project card */
+  .project-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 1400px;
+  }
+
+  .project-image {
+    width: 100%;
+    border-radius: 10px;
+    margin: 1rem 0;
+  }
+
+  .project-links {
+    display: flex;
+    gap: 1rem;
+  }
+
+
+
+  /* MOBILE RESPONSIVE BEHAVIOR */
+  @media (max-width: 768px) {
+    .grid-container {
+      grid-template-columns: 1fr;
+    }
+
+    /* Stack top then bottom */
+    .left-card {
+      order: 2;
+    }
+
+    .right-card {
+      order: 2;
+    }
+  }
+</style>
+
+
+ 
+    <div class="grid">
+  <article class="card project-card" aria-labelledby="proj1-title">
+    <h3 id="proj1-title">Retail Store Sales Dashboard</h3>
+    <p>
+      This retail dashboard turns raw sales data into instant clarity revealing trends, leaks, and opportunities in seconds.
+It empowers any store to boost revenue, cut losses, and make smarter decisions every single day.
+    </p>
+
+    <div class="iframe-wrapper">
+      <iframe 
+        title="Retail Sales Dashboard"
+        src="https://app.powerbi.com/view?r=eyJrIjoiYmE4Mjk4NmEtMzgwNy00NjI4LWIyMGYtMDM5NTA4NGQxMmE0IiwidCI6IjJiZDgwNTFhLTdhMjktNDdjYS1iY2U4LWNjM2E5YWNmY2ViOSIsImMiOjl9"
+        frameborder="0"
+        allowfullscreen="true">
+      </iframe>
+    </div>
+
+  </article>
+</div>
+
+
+ <div class="grid">
+  <article class="card project-card" aria-labelledby="proj1-title">
+    <h3 id="proj1-title">CashFlow Analysis Dashboard</h3>
+    <p>
+      It turns complicated numbers into simple insights every owner can act on.
+Once you feel this level of control over cashflow, you’ll wonder how you ever managed without it.
+    </p>
+
+    <div class="iframe-wrapper">
+      <iframe title="cashflow" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiYTlmZDY5ODMtZTFmMi00OGMyLThiOWMtNTI3YTVmMjUzZmRmIiwidCI6IjJiZDgwNTFhLTdhMjktNDdjYS1iY2U4LWNjM2E5YWNmY2ViOSIsImMiOjl9" 
+         frameborder="0" 
+      allowFullScreen="true">
+     </iframe>
+    </div>
+
+
+  </article>
+</div>
+      
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section contact">
+    <h2>Contact</h2>
+    <p>Let’s work together or discuss your next data project.</p>
+    <p>
+  <strong>Email:</strong>
+<a href="mailto:analyticallynetwork@gmail.com">
+    analyticallynetwork@gmail.com
+  </a>
+</p>
+
+  </section>
+
+  <footer>
+    © <span id="year"></span> Data Analyst Portfolio
+  </footer>
+
+  <!-- Script: theme toggle + persistence -->
+  <script>
+    // Elements
+    const toggle = document.getElementById('themeToggle');
+    const body = document.body;
+    const year = document.getElementById('year');
+
+    // Set current year
+    year.textContent = new Date().getFullYear();
+
+    // Initialize theme from localStorage or system preference
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark') {
+      body.classList.add('dark');
+      toggle.textContent = '☀️';
+    } else if (!saved && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      body.classList.add('dark');
+      toggle.textContent = '☀️';
+    }
+
+    // Toggle handler
+    toggle.addEventListener('click', () => {
+      const isDark = body.classList.toggle('dark');
+      toggle.textContent = isDark ? '☀️' : '🌙';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>
