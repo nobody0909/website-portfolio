@@ -1,216 +1,902 @@
-/* --------------- Palette --------------- */
+/* ======================================================
+   DATA ANALYST PORTFOLIO
+   Author: You
+   Cleaned & Organized CSS
+====================================================== */
+
+
+/* ======================================================
+   COLOR PALETTE
+====================================================== */
+
 :root{
-  --blue-dark: #003F91;
-  --blue-mid:  #5DA9E9;
-  --blue-soft: #63CCCA;
-  --bg: #f4f8ff;
-  --text: #0f172a;
-  --glass: rgba(255,255,255,0.35);
-  --gradient: linear-gradient(135deg,var(--blue-dark),var(--blue-mid),var(--blue-soft));
-  --card-shadow: rgba(3,17,44,0.10);
+    --blue-dark:#003F91;
+    --blue-mid:#5DA9E9;
+    --blue-soft:#63CCCA;
+
+    --bg:#f4f8ff;
+    --text:#0f172a;
+
+    --glass:rgba(255,255,255,.35);
+
+    --gradient:
+        linear-gradient(
+            135deg,
+            var(--blue-dark),
+            var(--blue-mid),
+            var(--blue-soft)
+        );
+
+    --card-shadow:rgba(3,17,44,.10);
 }
+
+
+/* ======================================================
+   DARK MODE
+====================================================== */
 
 body.dark{
-  --bg: #224073;
-  --text: #ffffff;
-  --glass: rgba(15,25,40,0.40);
-  --gradient: linear-gradient(135deg,#001f4f,#003F91,#5DA9E9);
-  --card-shadow: rgba(0,0,0,0.45);
+
+    --bg:#224073;
+    --text:#ffffff;
+
+    --glass:rgba(15,25,40,.40);
+
+    --gradient:
+        linear-gradient(
+            135deg,
+            #001f4f,
+            #003F91,
+            #5DA9E9
+        );
+
+    --card-shadow:rgba(0,0,0,.45);
+
 }
 
-/* --------------- Global --------------- */
-*{box-sizing:border-box}
-html,body{height:100%}
+
+/* ======================================================
+   GLOBAL
+====================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
 body{
-  margin:0;
-  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  background: var(--bg);
-  color: var(--text);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  transition: background .35s ease,color .35s ease;
+    height:100%;
 }
 
-/* --------------- Navbar --------------- */
+body{
+
+    font-family:'Inter',
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+
+    background:var(--bg);
+    color:var(--text);
+
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+
+    transition:
+        background .35s ease,
+        color .35s ease;
+
+}
+
+img{
+
+    max-width:100%;
+    display:block;
+
+}
+
+a{
+
+    text-decoration:none;
+
+}
+
+
+/* ======================================================
+   NAVBAR
+====================================================== */
+
 .navbar{
-  position:fixed;
-  top:0;
-  left:0;
-  right:0;
-  display:flex;
-  justify-content:flex-start;
-  gap:2rem;
-  align-items:center;
-  padding:1rem 5%;
-  z-index:80;
-  background: linear-gradient(180deg, rgba(255,255,255,0.55), rgba(255,255,255,0.12));
-  backdrop-filter: blur(10px);
-  border-bottom:1px solid rgba(255,255,255,0.06);
+
+    position:fixed;
+
+    top:0;
+    left:0;
+    right:0;
+
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+
+    gap:2rem;
+
+    padding:1rem 5%;
+
+    z-index:80;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.55),
+            rgba(255,255,255,.12)
+        );
+
+    backdrop-filter:blur(10px);
+
+    border-bottom:
+        1px solid rgba(255,255,255,.06);
+
 }
+
+
+.navbar nav{
+
+    display:flex;
+    align-items:center;
+
+    gap:.8rem;
+
+}
+
+
 .navbar a{
-  color:var(--text);
-  text-decoration:none;
-  font-weight:600;
-  margin-right:0.6rem;
-  padding:0.35rem 0.45rem;
-  border-radius:8px;
-}
-.navbar a:hover{ color:var(--blue-mid); background: rgba(255,255,255,0.03) }
 
-/* --------------- Theme Toggle (fixed) --------------- */
+    color:var(--text);
+
+    font-weight:600;
+
+    padding:.35rem .45rem;
+
+    border-radius:8px;
+
+    transition:.25s;
+
+}
+
+
+.navbar a:hover{
+
+    color:var(--blue-mid);
+
+    background:
+        rgba(255,255,255,.05);
+
+}
+
+
+/* ======================================================
+   THEME BUTTON
+====================================================== */
+
 .toggle-theme{
-  position:fixed;
-  top:18px;
-  right:20px;
-  width:48px;
-  height:48px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  font-size:18px;
-  border-radius:12px;
-  border:none;
-  cursor:pointer;
-  background:var(--glass);
-  box-shadow: 0 6px 18px var(--card-shadow);
-  backdrop-filter:blur(10px);
-  z-index:120;
-  transition: transform .18s ease, background .2s ease;
-}
-.toggle-theme:hover{ transform: translateY(-3px) }
 
-/* --------------- Hero --------------- */
+    position:fixed;
+
+    top:18px;
+    right:20px;
+
+    width:48px;
+    height:48px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:none;
+    cursor:pointer;
+
+    font-size:18px;
+
+    border-radius:12px;
+
+    background:var(--glass);
+
+    backdrop-filter:blur(10px);
+
+    box-shadow:
+        0 6px 18px
+        var(--card-shadow);
+
+    z-index:120;
+
+    transition:
+        transform .2s ease,
+        background .2s ease;
+
+}
+
+.toggle-theme:hover{
+
+    transform:translateY(-3px);
+
+}
+
+
+/* ======================================================
+   HERO
+====================================================== */
+
 .hero{
-  min-height:86vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:7rem 6% 4rem;
-  background: var(--gradient);
-  color:white;
-  clip-path: polygon(0 0,100% 0,100% 92%,0 100%);
+
+    min-height:86vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    padding:
+        7rem
+        6%
+        4rem;
+
+    background:var(--gradient);
+
+    color:#fff;
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            100% 92%,
+            0 100%
+        );
+
 }
-.hero-inner{ max-width:900px }
-.hero h1{ font-size:3.6rem; margin:0 0 .3rem; letter-spacing:0.6px; font-weight:800 }
-.tagline{ font-size:1.15rem; opacity:0.95; margin:0.4rem 0 1.7rem }
+
+
+.hero-inner{
+
+    max-width:900px;
+
+}
+
+
+.hero h1{
+
+    font-size:3.6rem;
+
+    font-weight:800;
+
+    letter-spacing:.6px;
+
+    margin-bottom:.3rem;
+
+}
+
+
+.tagline{
+
+    font-size:1.15rem;
+
+    opacity:.95;
+
+    margin:
+        .4rem
+        0
+        1.7rem;
+
+}
+
+
 .cta{
-  background:white; color:var(--blue-dark); padding:0.9rem 1.9rem; border-radius:999px;
-  text-decoration:none; font-weight:700; box-shadow:0 12px 30px rgba(2,9,46,0.12)
-}
-.cta:hover{ transform: translateY(-3px) }
 
-/* --------------- Sections --------------- */
-.section{ padding:5.2rem 6% }
+    display:inline-block;
+
+    background:#fff;
+
+    color:var(--blue-dark);
+
+    padding:
+        .9rem
+        1.9rem;
+
+    border-radius:999px;
+
+    font-weight:700;
+
+    box-shadow:
+        0 12px 30px
+        rgba(2,9,46,.12);
+
+    transition:.25s;
+
+}
+
+
+.cta:hover{
+
+    transform:translateY(-3px);
+
+}
+/* ======================================================
+   SECTIONS
+====================================================== */
+
+.section{
+
+    padding:5.2rem 6%;
+
+}
+
 .section h2{
-  text-align:center; color:var(--white); font-size:2.2rem; margin-bottom:1.4rem;
+
+    text-align:center;
+    font-size:2.2rem;
+    margin-bottom:1.4rem;
+
+    color:var(--text);
+
 }
 
-/* --------------- Grid & Cards --------------- */
+
+/* ======================================================
+   GRID & CARDS
+====================================================== */
+
 .grid{
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
-  gap:1.6rem;
-  align-items:start;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(260px,1fr));
+
+    gap:1.6rem;
+
+    align-items:start;
+
 }
+
+
 .card{
-  padding:1.6rem;
-  border-radius:16px;
-  background:var(--glass);
-  backdrop-filter: blur(12px);
-  border:1px solid rgba(255,255,255,0.12);
-  box-shadow: 0 10px 30px var(--card-shadow);
-  transition: transform .28s ease, box-shadow .28s ease;
+
+    padding:1.6rem;
+
+    border-radius:16px;
+
+    background:var(--glass);
+
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    box-shadow:
+        0 10px 30px
+        var(--card-shadow);
+
+    transition:
+        transform .28s ease,
+        box-shadow .28s ease;
+
 }
-.card:hover{ transform: translateY(-10px); box-shadow: 0 22px 48px var(--card-shadow) }
 
-/* About card style */
-.about-card{ max-width:760px; margin:0 auto; text-align:center; font-size:1.05rem; line-height:1.65 }
 
-/* Projects */
-.project-card h3{ margin:0 0 .4rem; color:var(--blue-dark); font-size:1.2rem }
-.project-card p{ margin:0 0 .9rem; color:rgba(0,0,0,0.65) }
+.card:hover{
 
-/* Project links row */
-.project-links{ display:flex; gap:0.6rem; flex-wrap:wrap }
+    transform:translateY(-10px);
+
+    box-shadow:
+        0 22px 48px
+        var(--card-shadow);
+
+}
+
+
+/* ======================================================
+   ABOUT
+====================================================== */
+
+.about-card{
+
+    max-width:760px;
+
+    margin:0 auto;
+
+    text-align:center;
+
+    font-size:1.05rem;
+
+    line-height:1.65;
+
+}
+
+body.dark .about-card p{
+
+    color:rgba(230,238,248,.9);
+
+}
+
+
+/* ======================================================
+   PROJECTS
+====================================================== */
+
+.projects-section{
+
+    width:100%;
+
+}
+
+
+.grid-container{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:2rem;
+
+    width:100%;
+
+    padding:1rem;
+
+}
+
+
+/* ======================================================
+   PROJECT CARDS
+====================================================== */
+
+.project-card{
+
+    width:min(1400px,100%);
+
+    margin:auto;
+
+    margin-top:1.3rem;
+    margin-bottom:1.9rem;
+
+    padding:2rem;
+
+    background:#fff;
+
+    border-radius:22px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,0,0,.10);
+
+    overflow:hidden;
+
+}
+
+
+.project-card h3{
+
+    color:var(--blue-dark);
+
+    font-size:2rem;
+
+    margin-bottom:1rem;
+
+}
+
+
+.project-card p{
+
+    color:#444;
+
+    font-size:1.1rem;
+
+    line-height:1.7;
+
+    margin-bottom:1.5rem;
+
+}
+
+
+body.dark .project-card p{
+
+    color:#000;
+
+}
+
+
+/* ======================================================
+   PROJECT IMAGES
+====================================================== */
+
+.project-image{
+
+    width:100%;
+
+    height:auto;
+
+    display:block;
+
+    border-radius:16px;
+
+}
+
+
+/* ======================================================
+   PROJECT BUTTONS
+====================================================== */
+
+.project-links{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:.6rem;
+
+}
+
+
 .btn-link{
-  display:inline-block;
-  text-decoration:none;
-  padding:0.52rem 0.8rem;
-  border-radius:10px;
-  font-weight:700;
-  font-size:0.95rem;
-  background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.7));
-  color:var(--blue-dark);
-  border:1px solid rgba(0,0,0,0.06);
-  box-shadow: 0 6px 18px rgba(2,9,46,0.06);
-}
-.btn-link:hover{ transform: translateY(-4px) }
 
-/* Make text lighter in dark mode for some elements */
-body.dark .project-card p,
-  .project-card p {
-    color: #000000; /* example: dark blue */
-  }
+    display:inline-block;
 
+    padding:.52rem .8rem;
 
-body.dark .about-card p{ color: rgba(230,238,248,0.9) }
+    border-radius:10px;
 
-/* --------------- Contact & Footer --------------- */
-.contact p{ text-align:center }
-body.dark .contact a {
-  color: #98fdff; /* matches your dark mode text */
-}
-footer{ text-align:center; padding:2rem 1rem; color:rgba(0,0,0,0.6) }
+    font-size:.95rem;
 
-/* --------------- Responsiveness --------------- */
-@media (max-width:820px){
-  .hero h1{ font-size:2.6rem }
-  .hero{ padding-top:6rem }
-  .navbar{ gap:0.8rem; padding:0.9rem 4% }
-}
-.project-card {
-  background: #fff;
-  padding: 2.5rem;               /* bigger inner spacing */
-  border-radius: 22px;
-  box-shadow: 0 8px 28px rgba(0,0,0,0.10);
-  width: 100%;
-  max-width: 1300px;             /* larger card width */
-  margin: auto;
-  margin-top: 1.3rem;
-  margin-bottom: 1.9rem;
+    font-weight:700;
+
+    color:var(--blue-dark);
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.9),
+            rgba(255,255,255,.7)
+        );
+
+    border:
+        1px solid rgba(0,0,0,.06);
+
+    box-shadow:
+        0 6px 18px
+        rgba(2,9,46,.06);
+
+    transition:.25s;
+
 }
 
-.project-card h3 {
-  font-size: 2rem;               /* larger title */
-  margin-bottom: 1.2rem;
+
+.btn-link:hover{
+
+    transform:translateY(-4px);
+
 }
 
-.project-card p {
-  font-size: 1.15rem;            /* slightly bigger text */
-  margin-bottom: 1.7rem;
-  color: #444;
+
+/* ======================================================
+   POWER BI
+====================================================== */
+
+.iframe-wrapper{
+
+    position:relative;
+
+    width:100%;
+
+    aspect-ratio:16/9;
+
+    border-radius:18px;
+
+    overflow:visible;
+
+    background:#f2f2f2;
+
+    margin-top:1.3rem;
+
+    margin-bottom:1.5rem;
+
 }
 
-/* Bigger, cleaner iframe */
-.iframe-wrapper {
-  position: relative;
-  width: 100%;
-  padding-top: 60%;              /* taller and more impressive view */
-  border-radius: 18px;
-  overflow: hidden;
-  margin-top: 1.3rem;
-  margin-bottom: 1.5rem;
+
+.iframe-wrapper iframe{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    border:none;
+
+    border-radius:18px;
+
 }
 
-.iframe-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-  border-radius: 18px;
-  margin-top: 1.3rem;
-  margin-bottom: 1.5rem;
+
+/* ======================================================
+   CONTACT
+====================================================== */
+
+.contact p{
+
+    text-align:center;
+
+}
+
+.contact a{
+
+    color:var(--blue-dark);
+
+    font-weight:600;
+
+}
+
+body.dark .contact a{
+
+    color:#98fdff;
+
+}
+
+
+/* ======================================================
+   FOOTER
+====================================================== */
+
+footer{
+
+    text-align:center;
+
+    padding:2rem 1rem;
+
+    color:rgba(0,0,0,.6);
+
+}
+
+body.dark footer{
+
+    color:rgba(255,255,255,.75);
+
+}
+/* ======================================================
+   RESPONSIVE DESIGN
+====================================================== */
+
+
+/* =========================
+   LARGE DESKTOP
+========================= */
+
+@media (min-width:1600px){
+
+    .project-card{
+        padding:3rem;
+    }
+
+}
+
+
+/* =========================
+   LAPTOP
+========================= */
+
+@media (max-width:1200px){
+
+    .project-card{
+        padding:2rem;
+    }
+
+    .project-card h3{
+        font-size:1.8rem;
+    }
+
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width:992px){
+
+    .hero h1{
+        font-size:3rem;
+    }
+
+    .section{
+        padding:4rem 5%;
+    }
+
+    .project-card{
+        padding:1.7rem;
+    }
+
+    .project-card h3{
+        font-size:1.6rem;
+    }
+
+    .project-card p{
+        font-size:1rem;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width:768px){
+
+    /* Navbar */
+
+    .navbar{
+
+        justify-content:center;
+        flex-wrap:wrap;
+
+        gap:12px;
+
+        padding:12px 50px 12px 12px;
+
+    }
+
+    .navbar nav{
+
+        display:flex;
+
+        justify-content:space-between;
+
+        align-items:center;
+
+        width:100%;
+
+        gap:0;
+
+    }
+
+    .navbar a{
+
+        flex:1;
+
+        text-align:center;
+
+        margin:0;
+
+        padding:4px;
+
+        font-size:.95rem;
+
+    }
+
+    .toggle-theme{
+
+        top:8px;
+        right:10px;
+
+        width:40px;
+        height:40px;
+
+        font-size:16px;
+
+    }
+
+    /* Hero */
+
+    .hero{
+
+        padding-top:7rem;
+
+    }
+
+    .hero h1{
+
+        font-size:2.4rem;
+
+    }
+
+    .tagline{
+
+        font-size:1rem;
+
+    }
+
+    .section{
+
+        padding:3.5rem 1rem;
+
+    }
+
+    /* Cards */
+
+    .project-card{
+
+        padding:1.2rem;
+
+        border-radius:18px;
+
+    }
+
+    .project-card h3{
+
+        font-size:1.35rem;
+
+    }
+
+    .project-card p{
+
+        font-size:.95rem;
+
+        line-height:1.6;
+
+    }
+
+    .about-card{
+
+        font-size:1rem;
+
+    }
+
+}
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width:480px){
+
+    .hero h1{
+
+        font-size:2rem;
+
+    }
+
+    .tagline{
+
+        font-size:.9rem;
+
+    }
+
+    .cta{
+
+        padding:.8rem 1.5rem;
+
+    }
+
+    .project-card{
+
+        padding:1rem;
+
+    }
+
+    .project-card h3{
+
+        font-size:1.2rem;
+
+    }
+
+    .project-card p{
+
+        font-size:.9rem;
+
+    }
+
+    .toggle-theme{
+
+        width:42px;
+        height:42px;
+
+    }
+
 }
